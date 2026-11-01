@@ -1,0 +1,51 @@
+
+
+main{
+    display: flex;
+    justify-content: center;
+    padding: 50px 15px;
+}
+
+.bodyCalculator h2{
+    font-family: cursive;
+    text-align: center;
+}
+.bodyCalculator{
+    width: 100%;
+    max-width: 350px;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px gray;
+    background-color: aqua;
+}
+
+.button-display{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+}
+.button-display button{
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: calc((100% - 30px) / 4);
+}
+.button-display button:hover{
+    transform: translateY(-5px);
+}
+.number{
+
+    padding: 30px;
+    margin: 10px;
+    border-radius: 100%;
+}
+.sign{
+    background-color: orange;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 100%;
+}
