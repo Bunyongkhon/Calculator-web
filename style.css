@@ -10,6 +10,18 @@ main{
     font-family: cursive;
     text-align: center;
 }
+.display{
+    border: 3px solid black;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    height: 60px;
+    align-items: center;
+    font-size: 50px;
+    background-color: white;
+}
 .bodyCalculator{
     width: 100%;
     max-width: 350px;
