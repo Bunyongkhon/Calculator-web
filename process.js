@@ -45,6 +45,16 @@ signAll.forEach(function(button){
            secondNumber = 0;
            waitingSecondNumber = true;
            display.textContent = firstNumber +"-";
+        } else if(button.textContent ==="x"){
+            firstNumber = Number(display.textContent);
+            operator = "x";
+            waitingSecondNumber = true;
+            display.textContent = firstNumber +"x";
+        } else if(button.textContent ==="/"){
+            firstNumber = Number(display.textContent);
+            operator = "/";
+            waitingSecondNumber = true;
+            display.textContent = firstNumber +"/";
         }
         else if(button.textContent ==="AC"){
             firstNumber = 0;
@@ -57,6 +67,12 @@ signAll.forEach(function(button){
                 display.textContent= result;
             }else if(operator ==="-"){
                 result = firstNumber - secondNumber;
+                display.textContent = result;
+            }else if (operator ==="x"){
+                result = firstNumber * secondNumber;
+                display.textContent = result;
+            }else if (operator==="/"){
+                result = firstNumber / secondNumber;
                 display.textContent = result;
             }
         }
