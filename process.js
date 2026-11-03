@@ -55,6 +55,26 @@ signAll.forEach(function(button){
             operator = "/";
             waitingSecondNumber = true;
             display.textContent = firstNumber +"/";
+
+        } else if(button.textContent==="."){
+            
+            if(!display.textContent.includes(".")){
+                display.textContent  +=".";
+            }
+
+        }else if(button.textContent ==="%"){
+            if(!display.textContent.includes("%")){
+                display.textContent +="%";
+                secondNumber =  (firstNumber * secondNumber)/100;
+            }
+        }else if(button.textContent ==="-/+"){
+            if(!waitingSecondNumber){
+                secondNumber = -secondNumber;
+                display.textContent = firstNumber +"" + operator +""+secondNumber;
+            }else{
+                firstNumber = -firstNumber;
+                display.textContent = firstNumber;
+            }
         }
         else if(button.textContent ==="AC"){
             firstNumber = 0;
