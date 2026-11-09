@@ -102,7 +102,31 @@ signAll.forEach(function(button) {
             editingSecondNumber = false;
             display.textContent = "0";
 
-        } else if (button.textContent === "=") {
+        } else if (button.textContent === "Del"){
+            if(waitingSecondNumber){
+                operator = "";
+                waitingSecondNumber = false;
+                editingSecondNumber = false;
+                display.textContent = String(firstNumber);
+
+            }else if(operator !==""){
+                const s = String(secondNumber).slice(0,-1);
+
+                if(s ===""||s ==="-"){
+                    secondNumber = 0;
+                    waitingSecondNumber = true;
+                    display.textContent = firstNumber + operator;
+                }else{
+                    secondNumber = Number(s);
+                    display.textContent = firstNumber + operator + secondNumber;
+                }
+            }else{
+                const s = display.textContent.slice(0,-1);
+                display.textContent = (s ==="" || s ==="-") ? "0" : s;
+                firstNumber = Number(display.textContent); 
+            }
+        }
+         else if (button.textContent === "=") {
             if (operator === "+") {
                 result = firstNumber + secondNumber;
                 display.textContent = result;
